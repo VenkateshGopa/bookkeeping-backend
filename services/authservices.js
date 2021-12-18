@@ -2,7 +2,7 @@ const  mongo  = require('../db/mongo');
 const {ObjectId} =  require('mongodb')
 const bcrypt = require('bcrypt');
 const jwt =  require('jsonwebtoken');
-const email = require('../emailer/emailer');
+const email = require('../Emailer/emailer');
 const schema = require('../schema/authschema');
 
 const services = {
