@@ -3,8 +3,8 @@ const app = express();
 const dotenv = require('dotenv');
 const cors = require('cors');
 const mongo = require('./db/mongo');
-const authroutes = require('./routes/auth');
-const routes = require('./routes/bookkeeping')
+const authroutes = require('./Routes/auth');
+const routes = require('./Routes/bookkeeping')
 const jwt= require('jsonwebtoken');
 
 
