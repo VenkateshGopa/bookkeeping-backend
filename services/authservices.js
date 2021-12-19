@@ -28,7 +28,7 @@ const services = {
         // console.log(registereduser)
         // const addnote  = await mongo.db.collection('notes').insertOne({id: (registereduser.insertedId).toString() , name:value.firstname , default:true});
         //sending email
-        await email(value.email , `http://localhost:3000/active/${registereduser.insertedId}`);
+        await email(value.email , `https://nervous-poitras-54f763.netlify.app/active/${registereduser.insertedId}`);
 
         res.status(201).send({message:"registered Succesfully"});
     }
@@ -95,7 +95,7 @@ const services = {
       if(!user) return res.status(403).send({error:"Email not registered"})
       const code = Math.random().toString(36).slice(-6);
       
-      await email(value.email , `http://localhost:3000/${user._id}/${code}`);
+      await email(value.email , `https://nervous-poitras-54f763.netlify.app/${user._id}/${code}`);
       await mongo.db.collection('userdetails').updateOne({email:value.email} , {$set:{code: code, time:(value.time +1800000)} })
       res.send({message:"email send successfully"})
     }
