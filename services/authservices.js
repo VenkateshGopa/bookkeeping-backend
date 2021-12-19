@@ -97,7 +97,7 @@ const services = {
       await email(value.email , `<h2>Hello ${user.firstname} ${user.lastname},</h2> <p> A request has been received to change the password for your account. The below Link to reset your account password is only valid for 30Minutes.</p> <p>Your Otp Is:</p> <h3>${code}</h3>  
       <span><a href="https://nervous-poitras-54f763.netlify.app/${user._id}/${code}">Click here</a> to reset your password</span>
       <P>(or) Use the below link</p>
-      <p>`https://nervous-poitras-54f763.netlify.app/${user._id}/${code}`);
+      <p>https://nervous-poitras-54f763.netlify.app/${user._id}/${code}</p>`);
       await email(value.email , `https://nervous-poitras-54f763.netlify.app/${user._id}/${code}`);
       await mongo.db.collection('userdetails').updateOne({email:value.email} , {$set:{code: code, time:(value.time +1800000)} })
       res.send({message:"email send successfully"})
