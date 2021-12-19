@@ -28,11 +28,11 @@ const services = {
         // console.log(registereduser)
         // const addnote  = await mongo.db.collection('notes').insertOne({id: (registereduser.insertedId).toString() , name:value.firstname , default:true});
         //sending email
-        //await email(value.email , `https://nervous-poitras-54f763.netlify.app/active/${registereduser.insertedId}`);
-      await email(value.email , `<h2>Hello ${user.firstname} ${user.lastname},</h2> <p> Book keeping account has been created Successfully. The below Link to Activate your book keeping account.</p>  
-      <span><a href="https://nervous-poitras-54f763.netlify.app/active/${registereduser.insertedId}">Click here</a> to activate your account</span>
-      <P>(or) Use the below link</p>
-      <p>https://nervous-poitras-54f763.netlify.app/active/${registereduser.insertedId}</p>`);
+        await email(value.email , `https://nervous-poitras-54f763.netlify.app/active/${registereduser.insertedId}`);
+//       await email(value.email , `<h2>Hello ${user.firstname} ${user.lastname},</h2> <p> Book keeping account has been created Successfully. The below Link to Activate your book keeping account.</p>  
+//       <span><a href="https://nervous-poitras-54f763.netlify.app/active/${registereduser.insertedId}">Click here</a> to activate your account</span>
+//       <P>(or) Use the below link</p>
+//       <p>https://nervous-poitras-54f763.netlify.app/active/${registereduser.insertedId}</p>`);
         res.status(201).send({message:"registered Succesfully"});
     }
     catch(error){
