@@ -58,6 +58,11 @@ const services = {
         await mongo.db.collection('userdetails').updateOne({_id: ObjectId(req.user)} , {$set:{password: req.body.password}})
         res.send("changed");
     },
+    deletedata : async(req, res) =>{
+        const data = await mongo.db.collection('notes').deleteOne({_id:ObjectId(req.params.id)});
+        res.send(data)
+        // console.log(req.params)
+    },
 }
 
 module.exports = services;
