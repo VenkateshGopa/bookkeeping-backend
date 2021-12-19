@@ -5,8 +5,8 @@ const mailer = (email, code) => {
     var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "packatest@gmail.com",
-        pass: "Packa@12345",
+        user: "bookkeeping.cap@gmail.com",
+        pass: "Book@12345",
       },
     });
 
