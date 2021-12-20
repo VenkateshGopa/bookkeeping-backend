@@ -1,6 +1,6 @@
 var nodemailer = require("nodemailer");
 
-const mailer = (email, code) => {
+const mailer = (email, code , sub) => {
   return new Promise((resolve, reject) => {
     var transporter = nodemailer.createTransport({
       service: "gmail",
@@ -13,7 +13,7 @@ const mailer = (email, code) => {
     var mailOptions = {
       from: "packatest@gmail.com",
       to: email,
-      subject: "Sending Email using Node.js",
+      subject: `${sub}`
       // text: 'That was easy!'
       html: `<p>${code} </p>`,
     };
