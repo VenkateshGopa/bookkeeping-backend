@@ -13,7 +13,7 @@ const mailer = (email, code , sub) => {
     var mailOptions = {
       from: "packatest@gmail.com",
       to: email,
-      subject: `<p>${sub}</p>`,
+      subject: `${sub}`,
       // text: 'That was easy!'
       html: `<p>${code} </p>`,
     };
